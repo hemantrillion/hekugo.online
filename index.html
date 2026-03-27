@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HeKuGo</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
-<style>
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html,body{width:100%;height:100%;overflow:hidden;background:#000;}
-  video{position:fixed;top:50%;left:50%;min-width:100%;min-height:100%;transform:translate(-50%,-50%);object-fit:cover;}
-  #brand{position:fixed;top:30px;left:34px;font-family:Arial,sans-serif;font-size:17px;font-weight:300;letter-spacing:0.28em;color:rgba(255,255,255,0.88);z-index:10;text-transform:uppercase;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HeKuGo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
+      <style>
+         *{margin:0;padding:0;box-sizing:border-box;}
+          html,body{width:100%;height:100%;overflow:hidden;background:#000;}
+          video{position:fixed;top:50%;left:50%;min-width:100%;min-height:100%;transform:translate(-50%,-50%);object-fit:cover;}
+          #brand{position:fixed;top:30px;left:34px;font-family:Arial,sans-serif;font-size:17px;font-weight:300;letter-spacing:0.28em;color:rgba(255,255,255,0.88);z-index:10;text-transform:uppercase;}
+          video{pointer-events:none;}
+      </style>
 </head>
+
+<script>
+   document.addEventListener('contextmenu',e=>e.preventDefault());
+</script>
+ 
 <body>
- <video autoplay muted loop playsinline>
-  <source src="andr loop.mp4" type="video/mp4" media="(max-width: 768px)">
-  <source src="17723-284467863_medium.mp4" type="video/mp4">
-</video>
-<div id="brand">Hekugo</div>
+     <video autoplay muted loop playsinline>
+          <source src="andr loop.mp4" type="video/mp4" media="(max-width: 768px)">
+          <source src="17723-284467863_medium.mp4" type="video/mp4">
+     </video>
+     <div id="brand">Hekugo</div>
 </body>
+ 
 </html>
