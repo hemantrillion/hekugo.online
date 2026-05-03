@@ -4,38 +4,195 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HeKuGo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
-      <style>
-         *{margin:0;padding:0;box-sizing:border-box;}
-          html,body{width:100%;height:100%;overflow:hidden;background:#000;}
-          video{position:fixed;top:50%;left:50%;min-width:100%;min-height:100%;transform:translate(-50%,-50%);object-fit:cover;}
-          #brand{position:fixed;top:30px;left:34px;font-family:Arial,sans-serif;font-size:17px;font-weight:300;letter-spacing:0.28em;color:rgba(255,255,255,0.88);z-index:10;text-transform:uppercase;}
-          video{pointer-events:none;}
-      </style>
+  <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@400;600&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    html, body {
+      width:100%; height:100%;
+      overflow-x:hidden; overflow-y:auto;
+      background:#000;
+    }
+
+    /* ── Background video ── */
+    #bg-video {
+      position:fixed; top:50%; left:50%;
+      min-width:100%; min-height:100%;
+      transform:translate(-50%,-50%);
+      object-fit:cover;
+      pointer-events:none;
+      z-index:0;
+    }
+
+    /* ── Subtle dark overlay so text is readable ── */
+    #overlay {
+      position:fixed; inset:0;
+      background:rgba(0,0,0,0.25);
+      z-index:1;
+    }
+
+    /* ── Brand name ── */
+    #brand {
+      position:fixed; top:28px; left:36px;
+      font-family:'Cascadia Code', monospace;
+      font-weight:600;
+      font-size:55px;
+      letter-spacing:0.12em;
+      color:rgba(255,255,255,0.92);
+      text-transform:uppercase;
+      z-index:10;
+      user-select:none;
+    }
+
+    /* ── Main content area ── */
+    #content {
+      position:relative;
+      z-index:5;
+      min-height:100vh;
+      padding:160px 60px 80px 60px;
+      display:flex;
+      flex-direction:column;
+      gap:32px;
+    }
+
+    /* ── Projects grid ── */
+    #projects {
+      display:grid;
+      grid-template-columns:repeat(auto-fill, minmax(180px, 180px));
+      gap:28px;
+      justify-content:flex-start;
+    }
+
+    /* ── Each project card ── */
+    .project-card {
+      width:180px;
+      background:rgba(255,255,255,0.12);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      border:1px solid rgba(255,255,255,0.18);
+      border-radius:22px;
+      padding:20px 16px 16px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:12px;
+      cursor:pointer;
+      text-decoration:none;
+      transition:transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform:translateY(-6px) scale(1.03);
+      background:rgba(255,255,255,0.2);
+      box-shadow:0 12px 40px rgba(0,0,0,0.35);
+    }
+
+    /* ── App icon ── */
+    .project-icon {
+      width:96px;
+      height:96px;
+      border-radius:22px;   /* iOS-style rounded square */
+      object-fit:cover;
+      display:block;
+      box-shadow:0 4px 16px rgba(0,0,0,0.4);
+    }
+
+    /* Placeholder icon when no image */
+    .project-icon-placeholder {
+      width:96px;
+      height:96px;
+      border-radius:22px;
+      background:rgba(255,255,255,0.15);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:40px;
+    }
+
+    /* ── App name ── */
+    .project-name {
+      font-family:'Cascadia Code', monospace;
+      font-weight:600;
+      font-size:18px;
+      color:rgba(255,255,255,0.95);
+      text-align:center;
+      letter-spacing:0.04em;
+    }
+
+    /* ── App tagline ── */
+    .project-tag {
+      font-family:'Cormorant Garamond', serif;
+      font-weight:300;
+      font-size:12px;
+      color:rgba(255,255,255,0.60);
+      text-align:center;
+      letter-spacing:0.06em;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width:600px) {
+      #brand { font-size:36px; left:20px; top:20px; }
+      #content { padding:120px 20px 60px; }
+      #projects { grid-template-columns:repeat(auto-fill, minmax(150px,150px)); gap:18px; }
+      .project-card { width:150px; }
+    }
+  </style>
 </head>
-
-
- 
 <body>
-     <audio autoplay loop>
-          <source src="sound1 bud.mp3" type="audio/mp3">
-     </audio>
-  
-     <video autoplay muted loop playsinline>
-          <source src="andr loop.mp4" type="video/mp4" media="(max-width: 768px)">
-          <source src="reel go.mp4" type="video/mp4">
-     </video>
-     
-  <div id="brand">Hekugo</div>
-  
-    <script>
-       document.addEventListener('contextmenu',e=>e.preventDefault());
-    </script>
-    
-    <script>
-        const audio = document.querySelector('audio');
-        document.addEventListener('click', () => audio.play(), {once: true});
-    </script>
+
+  <audio autoplay loop id="bg-audio">
+    <source src="sound1 bud.mp3" type="audio/mp3">
+  </audio>
+
+  <video id="bg-video" autoplay muted loop playsinline>
+    <source src="andr loop.mp4" type="video/mp4" media="(max-width:768px)">
+    <source src="reel go.mp4" type="video/mp4">
+  </video>
+
+  <div id="overlay"></div>
+  <div id="brand">HEKUGO</div>
+
+  <div id="content">
+    <div id="projects">
+
+      <!-- ══════════════════════════════════════════
+           ADD YOUR PROJECTS HERE.
+           Copy one <a class="project-card"> block per project.
+           Set href to your project page, e.g. /Zeitplan
+           Set src on <img> to your app icon file.
+           ══════════════════════════════════════════ -->
+
+      <a class="project-card" href="/Zeitplan">
+        <img class="project-icon" src="projects/zeitplan/icon.png" alt="Zeitplan"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="project-icon-placeholder" style="display:none">📅</div>
+        <span class="project-name">Zeitplan</span>
+        <span class="project-tag">Schedule & Attendance</span>
+      </a>
+
+      <!-- Example: add more projects below like this:
+
+      <a class="project-card" href="/ProjectName">
+        <img class="project-icon" src="projects/projectname/icon.png" alt="ProjectName"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="project-icon-placeholder" style="display:none">🚀</div>
+        <span class="project-name">ProjectName</span>
+        <span class="project-tag">Short description</span>
+      </a>
+
+      -->
+
+    </div>
+  </div>
+
+  <script>
+    // Prevent right-click
+    document.addEventListener('contextmenu', e => e.preventDefault());
+
+    // Autoplay audio on first interaction
+    const audio = document.getElementById('bg-audio');
+    document.addEventListener('click', () => audio.play().catch(()=>{}), { once: true });
+  </script>
+
 </body>
- 
 </html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zeitplan — HeKuGo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@400;600&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html,body{width:100%;min-height:100%;background:#000;overflow-x:hidden;}
+    #bg-video{position:fixed;top:50%;left:50%;min-width:100%;min-height:100%;transform:translate(-50%,-50%);object-fit:cover;pointer-events:none;z-index:0;}
+    #overlay{position:fixed;inset:0;background:rgba(0,0,0,0.52);z-index:1;}
+    #back{position:fixed;top:30px;left:36px;font-family:'Cascadia Code',monospace;font-size:13px;font-weight:600;color:rgba(255,255,255,0.6);text-decoration:none;letter-spacing:0.1em;z-index:10;transition:color 0.2s;}
+    #back:hover{color:#fff;}
+    #page{position:relative;z-index:5;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:100px 24px 60px;}
+    .card{background:rgba(255,255,255,0.08);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border:1px solid rgba(255,255,255,0.14);border-radius:28px;padding:52px 48px;max-width:560px;width:100%;display:flex;flex-direction:column;}
+    .app-name{font-family:'Cascadia Code',monospace;font-weight:600;font-size:42px;color:rgba(255,255,255,0.96);letter-spacing:0.06em;margin-bottom:18px;}
+    .app-desc{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:18px;color:rgba(255,255,255,0.70);line-height:1.8;letter-spacing:0.03em;margin-bottom:36px;}
+    .divider{width:100%;height:1px;background:rgba(255,255,255,0.10);margin-bottom:28px;}
+    .release-row{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+    .release-version{font-family:'Cascadia Code',monospace;font-weight:600;font-size:15px;color:rgba(255,255,255,0.88);letter-spacing:0.06em;margin-bottom:5px;}
+    .release-meta{font-family:'Cascadia Code',monospace;font-size:11px;color:rgba(255,255,255,0.38);letter-spacing:0.08em;}
+    .download-btn{display:flex;align-items:center;gap:10px;padding:14px 28px;background:rgba(45,90,61,0.85);border:1px solid rgba(45,90,61,0.5);border-radius:14px;font-family:'Cascadia Code',monospace;font-weight:600;font-size:14px;color:#fff;letter-spacing:0.08em;text-decoration:none;transition:background 0.2s,transform 0.2s,box-shadow 0.2s;white-space:nowrap;}
+    .download-btn:hover{background:rgba(45,90,61,1);transform:translateY(-2px);box-shadow:0 8px 24px rgba(45,90,61,0.5);}
+    @media(max-width:520px){.card{padding:36px 24px;}.app-name{font-size:30px;}.release-row{flex-direction:column;align-items:flex-start;}}
+  </style>
+</head>
+<body>
+  <video id="bg-video" autoplay muted loop playsinline>
+    <source src="../andr loop.mp4" type="video/mp4" media="(max-width:768px)">
+    <source src="../reel go.mp4" type="video/mp4">
+  </video>
+  <div id="overlay"></div>
+  <a id="back" href="/">← HEKUGO</a>
+  <div id="page">
+    <div class="card">
+      <div class="app-name">Zeitplan</div>
+      <div class="app-desc">
+        A personal timetable and attendance tracking app for Android.
+        Create fully custom schedules, mark attendance for each class,
+        track per-subject statistics, and manage medical leaves —
+        all saved locally on your device.
+      </div>
+      <div class="divider"></div>
+      <div class="release-row">
+        <div>
+          <div class="release-version">Release 2.0.0</div>
+          <div class="release-meta">03 MAY 2026 · ANDROID · APK</div>
+        </div>
+        <a class="download-btn" href="ZeitplanV2.apk" download>↓ &nbsp;Download APK</a>
+      </div>
+    </div>
+  </div>
+  <script>document.addEventListener('contextmenu',e=>e.preventDefault());</script>
+</body>
+</html>
