@@ -1,0 +1,16 @@
+{
+  "name": "UNPLUG Studio",
+  "short_name": "Studio",
+  "description": "UNPLUG Developer Studio, Game Creator & Desktop Arcade",
+  "start_url": "/unplug-desktop/studio.html",
+  "display": "standalone",
+  "background_color": "#0d1117",
+  "theme_color": "#0d1117",
+  "icons": [
+    {
+      "src": "/projects/unplug/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

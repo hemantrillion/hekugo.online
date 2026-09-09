@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UNPLUG Desktop — HeKuGo</title>
-  <meta name="description" content="UNPLUG Desktop publishing workspace: Windows distribution and release information from HeKuGo.">
+  <title>UNPLUG Desktop &amp; Studio — HeKuGo</title>
+  <meta name="description" content="UNPLUG Desktop Studio and PWA developer workspace: Windows installer and web studio from HeKuGo.">
   <link rel="canonical" href="https://hekugo.online/unplug-desktop/">
   <link rel="stylesheet" href="/projects/unplug/download.css">
 </head>
@@ -12,28 +12,45 @@
   <header><a href="/">← HEKUGO</a></header>
   <main>
     <img class="icon" src="/projects/unplug/icon.svg" alt="" width="96" height="96">
-    <h1>UNPLUG Desktop</h1>
-    <p class="intro">A connected workspace for game developers and administrators. Submit games, review tested candidates, monitor releases, and manage approved updates.</p>
+    <h1>UNPLUG Studio &amp; Desktop</h1>
+    <p class="intro">The offline-first developer workspace and desktop arcade for UNPLUG. Write and test HTML5 canvas games, simulate rewarded ads and hints, validate game contracts, and push games directly into the Android game player.</p>
+    
     <section aria-labelledby="download-title">
-      <span class="badge">Release v0.1.0 · Windows 64-bit</span>
-      <h2 id="download-title">Get the desktop app</h2>
-      <p>Verified release for Windows 10/11 (x64). Standalone desktop workspace for game developers and administrators with local preview and review governance.</p>
-      <p><a href="https://github.com/hemantrillion/Unplug-GameStore/releases/download/v0.1.0/UNPLUG-Desktop-0.1.0-x64-Setup.exe" style="display:inline-block; padding:12px 24px; background:#244dba; color:#fff; font-weight:600; text-decoration:none; border-radius:8px;">Download Installer (.exe · 106 MB)</a></p>
-      <p style="margin-top:8px; font-size:12.5px; color:#6b7280;">Built via GitHub Actions &amp; electron-builder. Verified release binary.</p>
-      <div style="margin-top:16px; font-size:13px; color:#58677f; font-family:Consolas, monospace; background:#f8fafd; padding:12px; border-radius:8px; border:1px solid #dce3ee; word-break:break-all;">
-        <div><strong>Version:</strong> 0.1.0 (x64)</div>
-        <div><strong>Package:</strong> NSIS Standalone Installer (111,324,603 bytes)</div>
-        <div><strong>SHA-256:</strong> 3c76736432cd796cd2f7484bf89530389c5d70d9a487fcdab7185fc16c44926e</div>
+      <span class="badge">Release v0.1.0 · Windows 64-bit &amp; Web PWA</span>
+      <h2 id="download-title">Get UNPLUG Studio</h2>
+      <p>Download the standalone Windows desktop application, or launch the interactive Web Studio right in your browser.</p>
+      
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin:16px 0;">
+        <a href="https://github.com/hemantrillion/Unplug-GameStore/releases/download/v0.1.0/UNPLUG-Desktop-0.1.0-x64-Setup.exe" style="display:inline-block; padding:13px 24px; background:#244dba; color:#fff; font-weight:700; text-decoration:none; border-radius:8px; font-size:15px; box-shadow:0 4px 12px rgba(36,77,186,0.25);">Download Windows App (.exe · 106 MB)</a>
+        <a href="/unplug-desktop/studio.html" style="display:inline-block; padding:13px 24px; background:#1b2438; color:#58a6ff; font-weight:700; text-decoration:none; border-radius:8px; font-size:15px; border:1px solid #388bfd;">Launch Web Studio (PWA) ↗</a>
       </div>
-      <p style="margin-top:16px;"><a href="https://github.com/hemantrillion/Unplug-GameStore">View the UNPLUG repository</a></p>
+      <p style="font-size:12.5px; color:#6b7280;">Windows 10/11 x64 verified NSIS installer. Browser PWA installable via Chrome or Edge.</p>
+
+      <div style="margin-top:18px; font-size:13px; color:#58677f; font-family:Consolas, monospace; background:#f8fafd; padding:14px; border-radius:8px; border:1px solid #dce3ee; word-break:break-all;">
+        <div><strong>Desktop Version:</strong> 0.1.0 (Windows x64)</div>
+        <div><strong>Standalone Installer:</strong> UNPLUG-Desktop-0.1.0-x64-Setup.exe (111,324,603 bytes)</div>
+        <div><strong>SHA-256:</strong> 3c76736432cd796cd2f7484bf89530389c5d70d9a487fcdab7185fc16c44926e</div>
+        <div style="margin-top:4px;"><strong>Pre-Installed Games:</strong> Bounce Arcade, Neon Trail (Snake), Memory Garden, Space Dodge</div>
+      </div>
     </section>
-    <section aria-labelledby="workspace-title">
-      <h2>One connected publishing platform</h2>
-      <p>The desktop workspace and Android player will use the same hosted UNPLUG service. Developer access covers their own games; administrator access includes platform-wide review and release controls.</p>
-      <h2 id="workspace-title">Browser installation is also planned</h2>
-      <p>The browser-installable PWA remains a planned option alongside the Windows download. A PWA installs from its hosted web address; its manifest is not an executable installer. The web workspace link will be added when that service is available.</p>
+
+    <section aria-labelledby="features-title">
+      <h2 id="features-title">Built for Creators &amp; Players</h2>
+      <ul style="margin:12px 0 20px 20px; line-height:1.8; color:#4b5563; font-size:14px;">
+        <li><strong>Game Workshop:</strong> Code HTML5 canvas games in the built-in editor with instant live sandbox execution.</li>
+        <li><strong>Simulated Ad Economy:</strong> Encounter rewarded ads on game over, watch 5-second simulated video ads to earn extra lives and hints, or toggle Ad-Free pass.</li>
+        <li><strong>Contract Verification:</strong> Automatically validates HTML5 sandbox safety, 256 KiB size limits, inline script rules, and readiness handshakes.</li>
+        <li><strong>Android APK Bridge:</strong> Push newly written games directly to the Android app source (<code>apps/android/www/games/</code>) and trigger Gradle APK builds.</li>
+        <li><strong>Desktop Arcade:</strong> Play all bundled games in a full desktop arcade experience offline.</li>
+      </ul>
+      <p style="margin-top:16px;"><a href="https://github.com/hemantrillion/Unplug-GameStore" style="color:#244dba; font-weight:600;">View the UNPLUG Source Code on GitHub ↗</a></p>
     </section>
-    <p>Looking for the phone player? <a href="/unplug-android/">Explore UNPLUG Android</a>.</p>
+
+    <section style="background:#f3f6fc; padding:18px; border-radius:10px; border:1px solid #d8e2f3; margin-top:20px;">
+      <h3 style="margin-top:0; font-size:16px;">Looking for the Mobile Game App?</h3>
+      <p style="font-size:13.5px; color:#4b5563; margin-bottom:12px;">Get the dedicated Android game player APK with all 4 games pre-installed, offline play, rewarded ads, lives, and hints.</p>
+      <a href="/unplug-android/" style="color:#244dba; font-weight:700; text-decoration:none;">Download UNPLUG Android (.apk) →</a>
+    </section>
   </main>
   <footer>UNPLUG · A HeKuGo project</footer>
 </body>
