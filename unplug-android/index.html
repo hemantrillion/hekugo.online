@@ -15,11 +15,19 @@
     <h1>UNPLUG Android</h1>
     <p class="intro">A game library built for playing on your phone. Planned features include verified game downloads, offline play, and online catalog updates.</p>
     <section aria-labelledby="download-title">
-      <span class="badge">In development · Android APK</span>
-      <h2 id="download-title">Get the Android app</h2>
-      <p>The first installable release is being prepared. A download will appear here once a signed APK has been built and tested.</p>
-      <button type="button" disabled>Download APK — coming soon</button>
-      <p><a href="https://github.com/hemantrillion/Unplug-GameStore">View the GameStore repository</a></p>
+      <span class="badge">Native Capacitor Shell & PWA Offline Player</span>
+      <h2 id="download-title">Get UNPLUG on Mobile</h2>
+      <p>UNPLUG is available immediately as an offline-first PWA for mobile browsers, and as a native Android project powered by Capacitor.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin:16px 0;">
+        <a href="/" style="display:inline-block; padding:12px 20px; background:#244dba; color:#fff; font-weight:600; text-decoration:none; border-radius:8px;">Launch Mobile Web Player (Offline PWA)</a>
+      </div>
+      <div style="margin-top:16px; font-size:13.5px; color:#4c5b72; background:#f8fafd; padding:16px; border-radius:10px; border:1px solid #dce3ee;">
+        <p style="margin:0 0 8px;"><strong>Native Android Project (Capacitor):</strong></p>
+        <p style="margin:0 0 8px;">The native Android project is generated in <code>apps/android/android/</code>. To compile or inspect in Android Studio:</p>
+        <code style="display:block; background:#fff; padding:8px 12px; border:1px solid #cad6e8; border-radius:6px; font-family:Consolas, monospace; color:#18243b;">cd apps/android &amp;&amp; npx cap open android</code>
+        <p style="margin:8px 0 0; font-size:12.5px; color:#6b7280;">Configured with target API 34, strict CSP, and native asset bundling for Google Play compliance.</p>
+      </div>
+      <p style="margin-top:16px;"><a href="https://github.com/hemantrillion/Unplug-GameStore">View the GameStore repository</a></p>
     </section>
     <section aria-labelledby="connection-title">
       <h2 id="connection-title">Connected when available. Offline after download.</h2>
