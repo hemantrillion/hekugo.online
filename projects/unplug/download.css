@@ -1,0 +1,18 @@
+:root { color-scheme: light; font: 16px/1.65 "Segoe UI", Arial, sans-serif; color: #18243b; background: #f5f7fb; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+header, main, footer { width: min(100% - 40px, 800px); margin: 0 auto; }
+header { padding: 28px 0; }
+a { color: #244dba; text-underline-offset: 4px; }
+header a { font-weight: 700; letter-spacing: .1em; text-decoration: none; }
+main { padding: 36px 0; }
+.icon { width: 96px; height: 96px; border-radius: 22px; }
+h1 { font-size: clamp(2rem, 6vw, 3.5rem); line-height: 1.15; margin: 24px 0 16px; }
+.intro { color: #4c5b72; font-size: 1.15rem; }
+section { margin: 28px 0; padding: 24px; background: #fff; border: 1px solid #dce3ee; border-radius: 18px; }
+h2 { margin-top: 0; font-size: 1.25rem; }
+.badge { display: inline-block; padding: 4px 12px; background: #e9efff; color: #25458c; border-radius: 999px; font-size: .85rem; font-weight: 600; }
+button { font: inherit; font-weight: 600; padding: 12px 20px; border: 0; border-radius: 8px; }
+button:disabled { color: #4c5b72; background: #e5eaf2; cursor: not-allowed; }
+a:focus-visible { outline: 3px solid #a96500; outline-offset: 5px; }
+footer { padding: 20px 0 40px; color: #58677f; }
